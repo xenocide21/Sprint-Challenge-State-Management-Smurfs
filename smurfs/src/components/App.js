@@ -3,6 +3,7 @@ import "./App.css";
 import axios from 'axios'
 
 import { SmurfContext } from '../contexts/SmurfContext'
+import SmurfList from "./SmurfList";
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
             <div>Start inside of your `src/index.js` file!</div>
             <div>Have fun!</div>
           </div>
+            <SmurfList smurfs={smurfs}/>
         </SmurfContext.Provider>
     );
 }
