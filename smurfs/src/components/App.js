@@ -5,10 +5,21 @@ import axios from 'axios'
 import { SmurfContext } from '../contexts/SmurfContext'
 import SmurfList from "./SmurfList";
 import SmurfForm from './SmurfForm'
+import Search from "./SearchByName";
 
 function App() {
 
     const [smurfs, setSmurfs] = useState([])
+    // const [findSmurf, setFindSmurf] = useState([])
+    //
+    // useEffect(()=>{
+    //     axios
+    //         .get('http://localhost:3333/smurfs/')
+    //         .then(r => {
+    //             setFindSmurf(r.data.name)
+    //         })
+    // })
+
 
     useEffect(() => {
         axios
@@ -25,12 +36,10 @@ function App() {
     return (
         <SmurfContext.Provider value={{ smurfs }}>
           <div className="App">
-            <h1>SMURFS! 2.0 W/ Redux</h1>
-            <div>Welcome to your state management version of Smurfs!</div>
-            <div>Start inside of your `src/index.js` file!</div>
-            <div>Have fun!</div>
+            <h1>Smurfs in Smurf Village</h1>
           </div>
-            <SmurfForm/>
+            <SmurfForm />
+            <Search/>
             <SmurfList smurfs={smurfs}/>
         </SmurfContext.Provider>
     );
